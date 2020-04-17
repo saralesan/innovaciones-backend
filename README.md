@@ -1,2 +1,4 @@
 # send-email
-An integration for contact us section on innovaciones web page
+This project uses is generated with node.js v12.16.2
+
+##Installation
