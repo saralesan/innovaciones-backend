@@ -1,0 +1,29 @@
+{
+  "name": "innovaciones-backend",
+  "version": "1.0.0",
+  "description": "This project uses is generated with node.js v12.16.2",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saralesan/innovaciones-backend.git"
+  },
+  "keywords": [],
+  "author": "Sara Sanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saralesan/innovaciones-backend/issues"
+  },
+  "homepage": "https://github.com/saralesan/innovaciones-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
