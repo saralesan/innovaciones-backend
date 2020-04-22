@@ -7,11 +7,12 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors())
 
-app.post('/formulario’', (req, res) => {
-    configMensaje(req.body);
+app.post('/contact_us', (req, res) => {
+    console.log(JSON.stringify(req.body));
+    configMessage(req.body);
     res.status(200).send();
 })
 
 app.listen(3000, () => {
-    console.log('Servidor corriendo')
+    console.log('Server running...')
 });

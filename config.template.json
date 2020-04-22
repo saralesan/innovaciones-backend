@@ -1,0 +1,11 @@
+{
+    "smtp": {
+        "host": "smtp-host",
+        "user": "user_email@abc.com",
+        "password": "email_password"
+    },
+    
+    "message_config": {
+        "recipent": "recipent_email@abc.com"
+    }
+}

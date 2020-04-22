@@ -1,25 +1,45 @@
 const nodemailer = require('nodemailer');
+var config = require('./config.json');
 
-module.exports = (formulario) => {
+module.exports = (contact_us) => {
     var transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: config.smtp.host,
+        port: 587,
         auth: {
-            user: 'tuemail@gmail.com', // Cambialo por tu email
-            pass: 'tupassword' // Cambialo por tu password
+            user: config.smtp.user,
+            pass: config.smtp.password
+        }
+        
+    });
+
+    // verify connection configuration
+    transporter.verify(function(error, success) {
+        if (error) {
+            console.log(error);
+        } 
+        else {
+            console.log("Server is ready to take the message");
         }
     });
 
     const mailOptions = {
-        from: '"${formulario.nombre} 👻" <${formulario.email}>',
-        to: 'destinatario', // Cambia esta parte por el destinatario
-        subject: formulario.asunto,
-        html: "<strong>Nombre:</strong> ${formulario.nombre} <br/><strong>E-mail:</strong> ${formulario.email} <br/><strong>Mensaje:</strong> ${formulario.mensaje}"
+        from: `"${contact_us.name}" <${contact_us.email}>`,
+        to: config.message_config.recipent,
+        subject: contact_us.subject,
+        html: `
+            <strong>Nombre: </strong> ${contact_us.name} <br/>
+            <strong>E-mail: </strong> ${contact_us.email} <br/>
+            <strong>Mensaje: </strong> ${contact_us.message}
+            `
     };
 
     transporter.sendMail(mailOptions, function (err, info) {
         if (err) {
-        console.log(err);}
+            console.log(err);
+        }
         else {
-        console.log(info);}
+            console.log('Successfully sent!');
+            console.log(info);
+        }
     });
 }
