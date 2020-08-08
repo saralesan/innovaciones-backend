@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const configMessage = require('./configMessage');
+const configMessage = require('../config/configMessage');
 
 const app = express();
 app.use(bodyParser.json());

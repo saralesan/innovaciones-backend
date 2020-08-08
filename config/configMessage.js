@@ -4,20 +4,18 @@ var config = require('./config.json');
 module.exports = (contact_us) => {
     var transporter = nodemailer.createTransport({
         host: config.smtp.host,
-        port: 587,
+        port: config.smtp.port,
         auth: {
             user: config.smtp.user,
             pass: config.smtp.password
         }
-        
     });
 
     // verify connection configuration
-    transporter.verify(function(error, success) {
+    transporter.verify(function (error, success) {
         if (error) {
             console.log(error);
-        } 
-        else {
+        } else {
             console.log("Server is ready to take the message");
         }
     });
@@ -36,8 +34,7 @@ module.exports = (contact_us) => {
     transporter.sendMail(mailOptions, function (err, info) {
         if (err) {
             console.log(err);
-        }
-        else {
+        } else {
             console.log('Successfully sent!');
             console.log(info);
         }
