@@ -10,7 +10,7 @@ Run `npm install` command in the project folder in order to install the dependen
 
 ## Configuration
 
-Rename config.template.json file with config.json and modify the variables:
+Rename config/config.template.json file to config/config.json and modify the variables:
 
 * smtp: Email hosts configuration for delivering messages.
 * message_config: Fields of the email message.
