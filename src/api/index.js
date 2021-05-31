@@ -1,5 +1,6 @@
 const express = require('express');
 const contact = require('./contact');
+const login = require('./login');
 
 const router = express.Router();
 
@@ -10,5 +11,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/contact', contact);
+router.use('/login', login);
 
 module.exports = router;

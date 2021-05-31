@@ -1,5 +1,8 @@
+const validateToken = require("./validateToken.js");
+
 const express = require('express');
 const configMessage = require('../../config/configMessage');
+
 const {
     Validator
 } = require('express-json-validator-middleware');
@@ -14,10 +17,12 @@ const router = express.Router();
 
 router.post('/', validate({
     body: contactSchema
-}), (req, res) => {
+}), validateToken, (req, res) => {
     console.log(JSON.stringify(req.body));
     configMessage(req.body);
-    res.status(200).send();
+    res.status(200).json({
+        message: "Contact sent"
+    });
 })
 
 module.exports = router;
