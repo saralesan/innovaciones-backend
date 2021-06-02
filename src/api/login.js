@@ -20,7 +20,7 @@ router.post('/', validate({
     var user = req.body;
 
     if (user.username == config.jwt.username && user.password == config.jwt.password) {
-        jwt.sign({ user }, config.jwt.secret, { expiresIn: '1h' }, (err, token) => {
+        jwt.sign({ user }, config.jwt.secret, (err, token) => {
             if (err) {
                 console.log(err);
                 res.sendStatus(403);

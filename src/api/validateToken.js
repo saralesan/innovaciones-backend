@@ -9,7 +9,7 @@ function validateToken(req, res, next) {
     if (typeof bearerHeader !== 'undefined') {
         const bearerToken = bearerHeader.split(" ")[1];
 
-        jwt.verify(bearerToken, config.secret, (error, authData) => {
+        jwt.verify(bearerToken, config.jwt.secret, (error, authData) => {
             if (error) {
                 console.log("Unsuccessful authorization, error: " + error);
 

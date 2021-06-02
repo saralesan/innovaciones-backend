@@ -11,5 +11,6 @@
         "username": "validusername",
         "password": "validpassword",
         "secret": "jwtsecret"
-    }
+    },
+    "recaptchav3_key": "googlerecaptchav3key"
 }
