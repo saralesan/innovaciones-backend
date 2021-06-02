@@ -14,3 +14,4 @@ Rename config/config.template.json file to config/config.json and modify the var
 
 * smtp: Email hosts configuration for delivering messages.
 * message_config: Fields of the email message.
+* jwt: Valid user for login with JWT and secret for token generation
